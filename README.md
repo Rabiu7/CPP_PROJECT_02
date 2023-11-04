@@ -1,6 +1,7 @@
 # CPP_PROJECT_02
 
 # Make Reservation
+When You click 1. Your Code Look like this. 
 
 ![Screenshot (20)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/a6fc2157-990a-4eee-9795-40454140e0d3)
 ![Screenshot (21)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/a1ce19b8-b188-4481-afc9-c3c8fd2a479d)
