@@ -3,7 +3,8 @@
 # Make Reservation
 _When You click 1. Your Code Look like this._ 
 
-![Screenshot (20)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/a6fc2157-990a-4eee-9795-40454140e0d3) ![Screenshot (21)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/a1ce19b8-b188-4481-afc9-c3c8fd2a479d)
+![Screenshot (20)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/a6fc2157-990a-4eee-9795-40454140e0d3) 
+![Screenshot (21)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/a1ce19b8-b188-4481-afc9-c3c8fd2a479d)
 ![Screenshot (22)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/b2c4825b-1b4b-4591-9a39-31d8a3b2134d)
 ![Screenshot (23)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/822cdde1-65ca-4f8d-abfc-e03176692b87)
 ![Screenshot (24)](https://github.com/Rabiu7/CPP_PROJECT_02/assets/132151445/587a823b-7998-4e47-9bc6-3f2a11f4860e)
