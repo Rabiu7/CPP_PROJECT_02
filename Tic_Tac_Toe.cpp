@@ -1,81 +1,90 @@
-#include <iostream>
-#include <vector>
-void displayBoard(const std::vector<std::vector<char>>& board) {
-    for (const auto& row : board) {
-        for (char cell : row) {
-            std::cout << cell << " ";
+#include <stdio.h>
+
+void displayBoard(char board[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%c ", board[i][j]);
         }
-        std::cout << std::endl;
+        printf("\n");
     }
 }
-bool checkWin(const std::vector<std::vector<char>>& board, char player) {
+
+int checkWin(char board[3][3], char player) {
     for (int i = 0; i < 3; i++) {
         if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
-            return true;
+            return 1;
         }
         if (board[0][i] == player && board[1][i] == player && board[2][i] == player) {
-            return true;
+            return 1;
         }
     }
     if (board[0][0] == player && board[1][1] == player && board[2][2] == player) {
-        return true;
+        return 1;
     }
     if (board[0][2] == player && board[1][1] == player && board[2][0] == player) {
-        return true;
+        return 1;
     }
-    return false;
+    return 0;
 }
-bool checkDraw(const std::vector<std::vector<char>>& board) {
-    for (const auto& row : board) {
-        for (char cell : row) {
-            if (cell == ' ') {
-                return false;
+
+int checkDraw(char board[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == ' ') {
+                return 0;
             }
         }
     }
-    return true;
+    return 1;
 }
-int main() {
-    std::vector<std::vector<char>> board(3, std::vector<char>(3, ' '));
-    char currentPlayer = 'X';
-    bool gameOver = false;
 
-    std::cout << "Welcome to Tic-Tac-Toe!" << std::endl;
+int main() {
+    char board[3][3] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+    char currentPlayer = 'X';
+    int gameOver = 0;
+
+    printf("Welcome to Tic-Tac-Toe!\n");
 
     while (!gameOver) {
         displayBoard(board);
-        std::cout << "Player " << currentPlayer << ", enter your move (row column): ";
+        printf("Player %c, enter your move (row column): ", currentPlayer);
         int row, col;
-        std::cin >> row >> col;
+        scanf("%d %d", &row, &col);
 
         if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ') {
             board[row][col] = currentPlayer;
 
             if (checkWin(board, currentPlayer)) {
                 displayBoard(board);
-                std::cout << "Player " << currentPlayer << " wins!" << std::endl;
-                gameOver = true;
+                printf("Player %c wins!\n", currentPlayer);
+                gameOver = 1;
             } else if (checkDraw(board)) {
                 displayBoard(board);
-                std::cout << "It's a draw!" << std::endl;
-                gameOver = true;
+                printf("It's a draw!\n");
+                gameOver = 1;
             }
 
             currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
         } else {
-            std::cout << "Invalid move. Try again." << std::endl;
+            printf("Invalid move. Try again.\n");
         }
     }
-    std::cout << "Game over. Would you like to play again? (Y/N): ";
+
+    printf("Game over. Would you like to play again? (Y/N): ");
     char playAgain;
-    std::cin >> playAgain;
+    scanf(" %c", &playAgain);
     if (playAgain == 'Y' || playAgain == 'y') {
-        board = std::vector<std::vector<char>>(3, std::vector<char>(3, ' '));
+        // Reset the board and game state
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board[i][j] = ' ';
+            }
+        }
         currentPlayer = 'X';
-        gameOver = false;
-        main();
+        gameOver = 0;
     } else {
-        std::cout << "Thank you for playing!" << std::endl;
+        printf("Thank you for playing!\n");
     }
+
     return 0;
 }
